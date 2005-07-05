@@ -2,7 +2,7 @@
 Summary:	Drupal Image Module
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.7
+Release:	0.14
 Epoch:		0
 License:	GPL
 Group:		Applications/WWW
@@ -15,7 +15,8 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_moddir		%{_datadir}/drupal/modules
-%define		_podir		%{_datadir}/drupal/po/%{modname}
+%define		_htmldir	%{_datadir}/drupal/htdocs/modules
+%define		_podir		%{_moddir}/po/%{modname}
 
 %description
 This module allow users with proper permissions to upload images into
@@ -30,12 +31,11 @@ rm -f LICENSE.txt # pure GPL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_moddir},%{_podir}}
+install -d $RPM_BUILD_ROOT{%{_moddir},%{_podir},%{_htmldir}}
 
 install *.module $RPM_BUILD_ROOT%{_moddir}
-install *.inc *.module *.php $RPM_BUILD_ROOT%{_moddir}
-# FIXME. not in public dir
-install *.css $RPM_BUILD_ROOT%{_moddir}
+install *.inc *.module $RPM_BUILD_ROOT%{_moddir}
+install *.css $RPM_BUILD_ROOT%{_htmldir}
 cp -a po/*.po $RPM_BUILD_ROOT%{_podir}
 
 %clean
@@ -52,10 +52,8 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt
+%doc *.txt po/*.pot *.php
 %{_moddir}/*.module
 %{_moddir}/*.inc
-%{_moddir}/*.php
 %{_podir}
-# TODO
-%{_moddir}/*.css
+%{_htmldir}/*.css
