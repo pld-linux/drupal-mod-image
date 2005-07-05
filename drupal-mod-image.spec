@@ -2,15 +2,21 @@
 Summary:	Drupal Image Module
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.18
+Release:	0.19
 Epoch:		0
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
 # Source0-md5:	0d218124ee86584375d4981ee1646a06
 URL:		http://drupal.org/project/image
+BuildRequires:	rpmbuild(macros) >= 1.194
 Requires:	drupal >= 4.6.0
+Requires:	drupal-mod-taxonomy
 Requires:	ImageMagick
+Requires:   ImageMagick-coder-tiff
+Requires:   ImageMagick-coder-jpeg2
+Requires:   ImageMagick-coder-jpeg
+Requires:   ImageMagick-coder-png
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
