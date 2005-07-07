@@ -29,7 +29,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This module allow users with proper permissions to upload images into
-drupal. Thumbnails are created automatically.
+Drupal. Thumbnails are created automatically.
 
 Images could be posted individually to the front page, included in
 stories or grouped in galleries.
