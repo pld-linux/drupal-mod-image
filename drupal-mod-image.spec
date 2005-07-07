@@ -1,5 +1,6 @@
 %define		modname image
 Summary:	Drupal Image Module
+Summary(pl):	Modu³ Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
 Release:	0.19
@@ -10,13 +11,13 @@ Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
 # Source0-md5:	0d218124ee86584375d4981ee1646a06
 URL:		http://drupal.org/project/image
 BuildRequires:	rpmbuild(macros) >= 1.194
+Requires:	ImageMagick
+Requires:	ImageMagick-coder-jpeg
+Requires:	ImageMagick-coder-jpeg2
+Requires:	ImageMagick-coder-png
+Requires:	ImageMagick-coder-tiff
 Requires:	drupal >= 4.6.0
 Requires:	drupal-mod-taxonomy
-Requires:	ImageMagick
-Requires:   ImageMagick-coder-tiff
-Requires:   ImageMagick-coder-jpeg2
-Requires:   ImageMagick-coder-jpeg
-Requires:   ImageMagick-coder-png
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,10 +29,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This module allow users with proper permissions to upload images into
-drupal. Thumbnails are created automaticaly.
+drupal. Thumbnails are created automatically.
 
-Images could be posted individualy to the front page, included in
+Images could be posted individually to the front page, included in
 stories or grouped in galleries.
+
+%description -l pl
+Ten modu³ pozwala u¿ytkownikom z odpowiednimi prawami umieszczaæ
+obrazki w Drupalu. Miniaturki tworzone s± automatycznie.
+
+Obrazki mog± byæ wysy³ane pojedynczo na stronê g³ówn±, w³±czane do
+artyku³ów albo grupowane w galeriach.
 
 %prep
 %setup -q -n %{modname}
