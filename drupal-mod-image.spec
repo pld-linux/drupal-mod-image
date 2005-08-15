@@ -3,7 +3,7 @@ Summary:	Drupal Image Module
 Summary(pl):	Modu³ Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.20
+Release:	0.21
 Epoch:		0
 License:	GPL
 Group:		Applications/WWW
@@ -17,7 +17,6 @@ Requires:	ImageMagick-coder-jpeg2
 Requires:	ImageMagick-coder-png
 Requires:	ImageMagick-coder-tiff
 Requires:	drupal >= 4.6.0
-Requires:	drupal-mod-taxonomy
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
