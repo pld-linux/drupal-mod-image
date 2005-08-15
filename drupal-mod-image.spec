@@ -3,7 +3,7 @@ Summary:	Drupal Image Module
 Summary(pl):	Modu³ Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.19
+Release:	0.20
 Epoch:		0
 License:	GPL
 Group:		Applications/WWW
@@ -24,7 +24,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_moddir		%{_datadir}/drupal/modules
 %define		_incdir		%{_datadir}/drupal/includes
 %define		_htdocs		%{_datadir}/drupal/htdocs
-%define		_htmldir	%{_htdocs}/modules
+%define		_htmlmoddir	%{_htdocs}/modules
 %define		_podir		%{_moddir}/po/%{modname}
 
 %description
@@ -47,11 +47,11 @@ rm -f LICENSE.txt # pure GPL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_moddir},%{_podir},%{_htmldir},%{_incdir},%{_htdocs}/files/images/temp}
+install -d $RPM_BUILD_ROOT{%{_moddir},%{_podir},%{_htmlmoddir},%{_incdir},%{_htdocs}/files/images/temp}
 
 install *.module $RPM_BUILD_ROOT%{_moddir}
 install *.inc $RPM_BUILD_ROOT%{_incdir}
-install *.css $RPM_BUILD_ROOT%{_htmldir}
+install *.css $RPM_BUILD_ROOT%{_htmlmoddir}
 cp -a po/*.po $RPM_BUILD_ROOT%{_podir}
 
 %clean
@@ -72,7 +72,7 @@ fi
 %{_moddir}/*.module
 %{_incdir}/*.inc
 %{_podir}
-%{_htmldir}/*.css
+%{_htmlmoddir}/*.css
 # TODO: FHS says this should go to /var
 %dir %attr(775,root,http) %{_htdocs}/files/images
 %dir %attr(775,root,http) %{_htdocs}/files/images/temp
