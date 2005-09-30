@@ -3,8 +3,7 @@ Summary:	Drupal Image Module
 Summary(pl):	Modu³ Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.21
-Epoch:		0
+Release:	0.22
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
@@ -20,11 +19,12 @@ Requires:	drupal >= 4.6.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_moddir		%{_datadir}/drupal/modules
-%define		_incdir		%{_datadir}/drupal/includes
-%define		_htdocs		%{_datadir}/drupal/htdocs
+%define		_drupaldir	%{_datadir}/drupal
+%define		_moddir		%{_drupaldir}/modules
+%define		_incdir		%{_drupaldir}/includes
+%define		_htdocs		%{_drupaldir}/htdocs
+%define		_podir		%{_drupaldir}/po/%{modname}
 %define		_htmlmoddir	%{_htdocs}/modules
-%define		_podir		%{_moddir}/po/%{modname}
 
 %description
 This module allow users with proper permissions to upload images into
