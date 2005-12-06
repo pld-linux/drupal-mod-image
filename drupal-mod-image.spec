@@ -3,7 +3,7 @@ Summary:	Drupal Image Module
 Summary(pl):	Modu³ Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.22
+Release:	0.23
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
@@ -24,6 +24,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_incdir		%{_drupaldir}/includes
 %define		_htdocs		%{_drupaldir}/htdocs
 %define		_podir		%{_drupaldir}/po/%{modname}
+%define		_filesdir	/var/lib/drupal
 %define		_htmlmoddir	%{_htdocs}/modules
 
 %description
@@ -46,7 +47,7 @@ rm -f LICENSE.txt # pure GPL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_moddir},%{_podir},%{_htmlmoddir},%{_incdir},%{_htdocs}/files/images/temp}
+install -d $RPM_BUILD_ROOT{%{_moddir},%{_podir},%{_htmlmoddir},%{_incdir},%{_filesdir}/images/temp}
 
 install *.module $RPM_BUILD_ROOT%{_moddir}
 install *.inc $RPM_BUILD_ROOT%{_incdir}
@@ -72,6 +73,5 @@ fi
 %{_incdir}/*.inc
 %{_podir}
 %{_htmlmoddir}/*.css
-# TODO: FHS says this should go to /var
-%dir %attr(775,root,http) %{_htdocs}/files/images
-%dir %attr(775,root,http) %{_htdocs}/files/images/temp
+%dir %attr(775,root,http) %{_filesdir}/images
+%dir %attr(775,root,http) %{_filesdir}/images/temp
