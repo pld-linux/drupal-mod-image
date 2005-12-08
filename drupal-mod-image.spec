@@ -3,11 +3,11 @@ Summary:	Drupal Image Module
 Summary(pl):	Modu³ Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
-Release:	0.23
+Release:	0.24
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://drupal.org/files/projects/%{modname}-%{version}.tar.gz
-# Source0-md5:	0d218124ee86584375d4981ee1646a06
+# Source0-md5:	8b5c011a83fad3cac38a4d670e117f4c
 URL:		http://drupal.org/project/image
 BuildRequires:	rpmbuild(macros) >= 1.194
 Requires:	ImageMagick
