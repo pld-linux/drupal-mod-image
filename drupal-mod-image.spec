@@ -1,6 +1,6 @@
 %define		modname image
 Summary:	Drupal Image Module
-Summary(pl):	Modu³ Image dla Drupala
+Summary(pl.UTF-8):   ModuÅ‚ Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
 Release:	0.24
@@ -34,12 +34,12 @@ Drupal. Thumbnails are created automatically.
 Images could be posted individually to the front page, included in
 stories or grouped in galleries.
 
-%description -l pl
-Ten modu³ pozwala u¿ytkownikom z odpowiednimi prawami umieszczaæ
-obrazki w Drupalu. Miniaturki tworzone s± automatycznie.
+%description -l pl.UTF-8
+Ten moduÅ‚ pozwala uÅ¼ytkownikom z odpowiednimi prawami umieszczaÄ‡
+obrazki w Drupalu. Miniaturki tworzone sÄ… automatycznie.
 
-Obrazki mog± byæ wysy³ane pojedynczo na stronê g³ówn±, w³±czane do
-artyku³ów albo grupowane w galeriach.
+Obrazki mogÄ… byÄ‡ wysyÅ‚ane pojedynczo na stronÄ™ gÅ‚Ã³wnÄ…, wÅ‚Ä…czane do
+artykuÅ‚Ã³w albo grupowane w galeriach.
 
 %prep
 %setup -q -n %{modname}
