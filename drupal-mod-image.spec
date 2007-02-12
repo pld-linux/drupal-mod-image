@@ -1,6 +1,6 @@
 %define		modname image
 Summary:	Drupal Image Module
-Summary(pl.UTF-8):   Moduł Image dla Drupala
+Summary(pl.UTF-8):	Moduł Image dla Drupala
 Name:		drupal-mod-%{modname}
 Version:	4.6.0
 Release:	0.24
